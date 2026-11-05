@@ -9,6 +9,10 @@ It will be built in three steps:
 
 A bonus idea is to do an HTR where the graphite also functions as thermal buffer
 
+## Packages used
+
+iapws
+
 ## Rankine (steady state)
 
 ![Rankine diagram](Rankine-Cycle-scheme.png)
@@ -19,7 +23,8 @@ The following parameters for the cycle are chosen:
 
 | Parameter | Value | Unit | Description |
 |-|-|-|-|
-| Q_H | 1000 | W | Nuclear steam generator input power |
-| P_3 | 6 | MPa | Turbine inlet pressure |
+| Q_H | 1000 | W | Nuclear thermal power |
+| P_high | 6 | MPa | Turbine inlet pressure |
 | T_3 | 275 | C | Turbine inlet Temperature |
-| P_4 | 0.008 | MPa | Turbine outlet pressure |
+| T_4 | 40 | C | Turbine outlet Temperature |
+| P_low | 0.008 | MPa | Turbine outlet pressure |
