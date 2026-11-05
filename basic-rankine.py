@@ -1,6 +1,6 @@
 from iapws import IAPWS95
 
-
+# fixed parameters
 Q_h = 1000
 P_high = 6
 T_3 = 275.6 + 273.15
@@ -15,21 +15,21 @@ v_water = cooled_liquid.rho/1000
 
 h2 = h1 + v_water*(P_high - P_low)
 
-
 # calculate mass_flow
 saturated_vapor = IAPWS95(T=T_3,x=1,P=P_high)
 h3 = saturated_vapor.h
 
-m = (h2-h3)/Q_h
+m = Q_h/(h2-h3)
 
 # calculate outputpower
-
 s3 = saturated_vapor.s
-
 condensed_vapor = IAPWS95(s = s3, P=P_low)
 x = condensed_vapor.x
 h4 = condensed_vapor.h
 
 W_T = (h4-h3)*m
 
-print('Output power: ',W_T)
+eff = W_T/Q_h
+
+print('Output power: %d W' % W_T)
+print(f'efficiency: {eff:.0%}')
