@@ -40,7 +40,6 @@ class rankineCycle:
 
     def step(self,dt,Q_h):
         Q_steam = self.UA * (self.T_H - self.T_3)
-        print(Q_steam)
         self.m = Q_steam/(self.h3-self.h2)
         self.T_H = self.T_H + dt / self.Ceff * (Q_h - Q_steam)
         self.w_T = -(self.h4-self.h3)*self.m

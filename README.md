@@ -40,6 +40,7 @@ whereby the heat transfered to the steam follows the following reationship:
 $$
 Q_{steam} = (h_2 - h_3) \dot{m} = (T_H - T_3) UA
 $$
+
 For simplicity, the typical primary inlet temperature is used as $T_H$, and $T_3$ is used to represent the secondary side. This give us  the following values:
 
 | Parameter | Value | Unit | Description |
