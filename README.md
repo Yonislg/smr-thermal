@@ -28,3 +28,24 @@ The following parameters for the cycle are chosen:
 | T_3 | 275 | C | Turbine inlet Temperature |
 | T_4 | 40 | C | Turbine outlet Temperature |
 | P_low | 0.008 | MPa | Turbine outlet pressure |
+
+## Thermal inertia
+
+A simplified thermal inertia model is used for the heat exchanger.
+
+$$ M_H C_H \frac{dT_H}{dt} = Q_H - (h_2 - h_3) \dot{m} $$
+
+whereby the heat transfered to the steam follows the following reationship:
+
+$$
+Q_{steam} = (h_2 - h_3) \dot{m} = (T_H - T_3) UA
+$$
+For simplicity, the typical primary inlet temperature is used as $T_H$, and $T_3$ is used to represent the secondary side. This give us  the following values:
+
+| Parameter | Value | Unit | Description |
+|-|-|-|-|
+| T_H | 315 | C | Initial heat exchanger temperature |
+| UA | 25.4 | MW/k | Heat transfer coefficient |
+| M_H C_H | 500 | MJ/K | Heat capacity |
+
+Time integration uses forward euler for $T_H$
